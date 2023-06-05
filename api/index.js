@@ -17,8 +17,7 @@ const apiProxy = createProxyMiddleware({
     target: "https://api.openai.com",
     changeOrigin: true,
     pathRewrite: {
-        "^/api": "/", // strip "/api" from the URL
-        "^/api/*": "/*"
+        "^/*": "/*"
     },
     onProxyRes(proxyRes) {
         // proxyRes.headers['x-added'] = 'foobar'; // add new header to response
